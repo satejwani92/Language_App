@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:final_lang/screens/information.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -234,42 +235,15 @@ class _ImageUploadsState extends State<ImageUploads> {
                 height: 30,
               ),
               const Divider(),
-              ProfileTile(
-                dync: widget.dync,
-                title: 'Settings',
-                icon: LineIcons.cog,
-                onPress: () {},
-                endIcon: true,
-              ),
-              ProfileTile(
-                dync: widget.dync,
-                title: 'Billing Deatils',
-                icon: LineIcons.wallet,
-                onPress: () {},
-                endIcon: true,
-              ),
-              ProfileTile(
-                dync: widget.dync,
-                title: 'Certification',
-                icon: LineIcons.certificate,
-                onPress: () {},
-                endIcon: true,
-              ),
-              const Divider(),
-              ProfileTile(
-                dync: widget.dync,
-                title: 'Information',
-                icon: LineIcons.info,
-                onPress: () {},
-                endIcon: true,
-              ),
-              ProfileTile(
-                dync: widget.dync,
-                title: 'Logout',
-                icon: LineIcons.alternateSignIn,
-                onPress: () {},
-                endIcon: false,
-                textcolor: Colors.red,
+              Center(
+                child: ProfileTile(
+                  dync: widget.dync,
+                  title: 'Logout',
+                  icon: LineIcons.alternateSignIn,
+                  onPress: () {},
+                  endIcon: false,
+                  textcolor: Colors.red,
+                ),
               ),
             ],
           ),

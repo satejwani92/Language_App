@@ -33,7 +33,6 @@ class _RegisterLang extends State<RegisterLang> {
     ["Malayalam", "ml", "IN"],
     ["Tamil", "ta", "IN"],
     ["Hindi", "hi", "IN"],
-    ["Kannada", "kn", "IN"],
   ];
 
   int selected = 0;

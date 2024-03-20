@@ -250,25 +250,6 @@ class _TranslatorScreenState extends State<TranslatorScreen> {
                                     color: kTableBorder,
                                   ),
                                 ),
-                                // IconButton(
-                                //   onPressed: () {
-                                //     setState(() {
-                                //       hintText = !islist
-                                //           ? "Listening ..."
-                                //           : "Enter text to be translated";
-
-                                //       islist = islist ? false : true;
-                                //     });
-                                //     islist
-                                //         ? startListening(
-                                //             LangAvail[dropdownvalue])
-                                //         : _stopListening();
-                                //   },
-                                //   icon: Icon(
-                                //     islist ? Icons.cancel : Icons.mic,
-                                //     color: kTableBorder,
-                                //   ),
-                                // ),
                               ],
                             ),
                           ),

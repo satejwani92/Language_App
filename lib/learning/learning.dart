@@ -45,9 +45,9 @@ class _questionsUiState extends State<questionsUi> {
     Question = box.get(widget.topic) ?? '';
 
     lang =
-        box.get("Lang")[box.get("current_lang").toString()]['Selected_lang'][0];
+    box.get("Lang")[box.get("current_lang").toString()]['Selected_lang'][0];
     lang_code =
-        box.get("Lang")[box.get("current_lang").toString()]['Selected_lang'][1];
+    box.get("Lang")[box.get("current_lang").toString()]['Selected_lang'][1];
 
     Map<dynamic, dynamic> RawData = box.get("Data_downloaded");
 
@@ -103,15 +103,16 @@ class _questionsUiState extends State<questionsUi> {
                 ),
               ),
               Expanded(
+                flex: 2,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Center(
                         child: Text(
-                      "${(UQuestion[Randint][0])} in ${lang}"
-                          .tr(), // Change here
-                      style: TextStyle(fontSize: 20),
-                    )),
+                          "${(UQuestion[Randint][0])} in ${lang}"
+                              .tr(), // Change here
+                          style: TextStyle(fontSize: 20),
+                        )),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 10,
                     ),
@@ -126,7 +127,7 @@ class _questionsUiState extends State<questionsUi> {
                         decoration: BoxDecoration(
                             color: widget.dync.primaryContainer,
                             borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
+                            BorderRadius.all(Radius.circular(30))),
                         child: Icon(
                           Icons.audio_file,
                           color: Colors.white,
@@ -135,9 +136,9 @@ class _questionsUiState extends State<questionsUi> {
                     )
                   ],
                 ),
-                flex: 2,
               ),
               Expanded(
+                flex: 2,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -149,7 +150,6 @@ class _questionsUiState extends State<questionsUi> {
                     ],
                   ),
                 ),
-                flex: 2,
               )
             ],
           ),
@@ -262,9 +262,9 @@ class _questionsUiState extends State<questionsUi> {
                         prog.progress_update(0);
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (context) => IndProgress(
-                                  data: widget.topic,
-                                  dync: widget.dync,
-                                )));
+                              data: widget.topic,
+                              dync: widget.dync,
+                            )));
                       }
                     });
                   },
@@ -296,34 +296,34 @@ class _questionsUiState extends State<questionsUi> {
   Expanded AnswerOptions(String value, String answer) {
     return Expanded(
         child: GestureDetector(
-      onTap: () {
-        if (value == answer) {
-          setState(() {
-            Popin_correct = true;
-          });
-        } else {
-          setState(() {
-            Popin_incorrect = true;
-          });
-        }
-      },
-      child: Container(
-        margin: EdgeInsets.all(8),
-        width: double.infinity,
-        decoration: BoxDecoration(
-            color: widget.dync.primaryContainer,
-            border: Border.all(color: widget.dync.onPrimary),
-            borderRadius: BorderRadius.all(Radius.circular(20))),
-        child: Center(
-            child: Text(
-          value,
-          style: TextStyle(
-              color: widget.dync.secondary,
-              fontSize: 15,
-              fontWeight: FontWeight.bold),
-        )),
-      ),
-    ));
+          onTap: () {
+            if (value == answer) {
+              setState(() {
+                Popin_correct = true;
+              });
+            } else {
+              setState(() {
+                Popin_incorrect = true;
+              });
+            }
+          },
+          child: Container(
+            margin: EdgeInsets.all(8),
+            width: double.infinity,
+            decoration: BoxDecoration(
+                color: widget.dync.primaryContainer,
+                border: Border.all(color: widget.dync.onPrimary),
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            child: Center(
+                child: Text(
+                  value,
+                  style: TextStyle(
+                      color: widget.dync.secondary,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                )),
+          ),
+        ));
   }
 }
 

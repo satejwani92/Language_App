@@ -45,75 +45,78 @@ class _leaderboardState extends State<leaderboard> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        SizedBox(
-          height: 20,
-        ),
-        Container(
-          child: Center(
-              child: Text(
-            "Leaderboard",
-            style: TextStyle(
-                fontSize: 34, color: Colors.white, fontWeight: FontWeight.bold),
-          )),
-          height: MediaQuery.of(context).size.height / 10,
-        ),
-        Container(
-            height: 600,
-            child: StreamBuilder(
-                stream:
-                    FirebaseFirestore.instance.collection('user').snapshots(),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(
-                      child: Text("Loading .."),
-                    );
-                  }
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            child: Center(
+                child: Text(
+              "Leaderboard",
+              style: TextStyle(
+                  fontSize: 34, color: Colors.white, fontWeight: FontWeight.bold),
+            )),
+            height: MediaQuery.of(context).size.height / 10,
+          ),
+          Container(
+              height: 600,
+              child: StreamBuilder(
+                  stream:
+                      FirebaseFirestore.instance.collection('user').snapshots(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Center(
+                        child: Text("Loading .."),
+                      );
+                    }
 
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: Text("404"),
-                    );
-                  }
-                  var data = (snapshot.data as QuerySnapshot).docs;
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: Text("404"),
+                      );
+                    }
+                    var data = (snapshot.data as QuerySnapshot).docs;
 
-                  ///removed
-                  if (snapshot.hasData) {
-                    online_offline.setstatus(true);
-                  }
+                    ///removed
+                    if (snapshot.hasData) {
+                      online_offline.setstatus(true);
+                    }
 
-                  List udata = sort_data(data);
+                    List udata = sort_data(data);
 
-                  return ListView.builder(
-                      itemCount: udata.length,
-                      itemBuilder: (context, index) {
-                        return leadcont(
-                            status: udata[index].data()["status"] == true
-                                ? (udata[index]
-                                            .data()["name"]
-                                            .toString()
-                                            .toLowerCase() ==
-                                        user!.displayName!
-                                            .toLowerCase()
-                                            .toString())
-                                    ? Colors.transparent
-                                    : Colors.green
-                                : Colors.transparent,
-                            user: user,
-                            name: udata[index].data()["1"]["name"],
-                            email: udata[index].reference.id,
-                            dync: widget.dync,
-                            imageurl: udata[index].data()['avtar_url'],
-                            index: index,
-                            shield: rank_colors[index < 3 ? index : 3],
-                            context: context,
-                            rank: udata[index].data()["leader_board"]);
-                      });
-                }))
-      ],
+                    return ListView.builder(
+                        itemCount: udata.length,
+                        itemBuilder: (context, index) {
+                          return leadcont(
+                              status: udata[index].data()["status"] == true
+                                  ? (udata[index]
+                                              .data()["name"]
+                                              .toString()
+                                              .toLowerCase() ==
+                                          user!.displayName!
+                                              .toLowerCase()
+                                              .toString())
+                                      ? Colors.transparent
+                                      : Colors.green
+                                  : Colors.transparent,
+                              user: user,
+                              name: udata[index].data()["1"]["name"],
+                              email: udata[index].reference.id,
+                              dync: widget.dync,
+                              imageurl: udata[index].data()['avtar_url'],
+                              index: index,
+                              shield: rank_colors[index < 3 ? index : 3],
+                              context: context,
+                              rank: udata[index].data()["leader_board"]);
+                        });
+                  }))
+        ],
+      ),
     );
   }
 

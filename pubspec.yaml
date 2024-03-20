@@ -23,7 +23,7 @@ dependencies:
   percent_indicator: ^4.2.3
   translator: ^0.1.7
   hive: ^2.2.3
-  hive_flutter: 
+  hive_flutter: ^1.1.0
   lottie: ^2.3.2
   text_to_speech: ^0.2.3
   speech_to_text: ^6.1.1
@@ -45,15 +45,24 @@ dependencies:
   timeago: ^3.3.0
   http: ^0.13.6
   google_vision: ^1.0.7+7
+
   flutter_svg: ^2.0.5
   googleapis_auth: ^1.4.1
   cupertino_icons: ^1.0.2
+  flutter_signature_pad: ^3.0.1
   easy_localization: ^3.0.3
+  flame: ^1.14.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+flutter_launcher_icons:
+    android: "launcher_icon"
+    ios: true
+    image_path: "assets/logo.png"
+    min_sdk_android: 21 #
 
 flutter:
   uses-material-design: true

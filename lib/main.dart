@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:langapp/screens/RLSW/writing.dart';
+import 'package:lottie/lottie.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -6,9 +8,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:after_layout/after_layout.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'screens/login_page.dart';
 import 'Splash/inital.dart';
-
+import 'package:provider/provider.dart';
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox("LocalDB");
@@ -23,7 +26,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  // const MyApp({});
+  const MyApp({key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,14 +70,14 @@ class SplashState extends State<Splash> with AfterLayoutMixin<Splash> {
     if (_seen) {
       Navigator.of(context).pushReplacement(new MaterialPageRoute(
           builder: (context) => LoginPage(
-                dync: widget.dync,
-              )));
+            dync: widget.dync,
+          )));
     } else {
       await prefs.setBool('seen', true);
       Navigator.of(context).pushReplacement(new MaterialPageRoute(
           builder: (context) => InitPage(
-                dync: widget.dync,
-              )));
+            dync: widget.dync,
+          )));
     }
   }
 

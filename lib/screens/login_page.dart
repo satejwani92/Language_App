@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                 );
               }
 
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             },
@@ -108,33 +108,33 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: widget.dync.inversePrimary,
               border: Border.all(color: Colors.black),
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
             ),
             child: TextFormField(
               controller: _emailTextController,
               focusNode: _focusEmail,
               validator: (value) => Validator.validateEmail(email: value),
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.only(left: 15),
+                contentPadding: const EdgeInsets.only(left: 15),
                 hintText: tr("Enter your email id"),
                 hintStyle: TextStyle(fontSize: 16, color: widget.dync.primary),
                 focusedBorder: InputBorder.none,
                 border: InputBorder.none,
               ),
-              style: TextStyle(color: Colors.black),
+              style: const TextStyle(color: Colors.black),
             ),
           ),
-          SizedBox(height: 8.0),
+          const SizedBox(height: 8.0),
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: widget.dync.inversePrimary,
               border: Border.all(color: Colors.black),
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
             ),
             child: TextFormField(
               controller: _passwordTextController,
@@ -142,24 +142,24 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
               validator: (value) => Validator.validatePassword(password: value),
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.only(left: 15),
+                contentPadding: const EdgeInsets.only(left: 15),
                 hintStyle: TextStyle(fontSize: 16, color: widget.dync.primary),
                 hintText: tr("Your Password"),
                 focusedBorder: InputBorder.none,
                 border: InputBorder.none,
               ),
-              style: TextStyle(color: Colors.black),
+              style: const TextStyle(color: Colors.black),
             ),
           ),
-          SizedBox(height: 24.0),
+          const SizedBox(height: 24.0),
           _isProcessing
-              ? CircularProgressIndicator()
+              ? const CircularProgressIndicator()
               : Row(
                   children: [
                     Expanded(child: signinbutton(context)),
                   ],
                 ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -178,14 +178,14 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 child: Text(
                   tr("Register"),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color.fromARGB(200, 139, 61, 241),
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
           Row(
@@ -204,7 +204,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 child: Text(
                   tr("Click Here"),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color.fromARGB(200, 139, 61, 241),
                   ),
                 ),
@@ -236,7 +236,7 @@ class _LoginPageState extends State<LoginPage> {
               padding: EdgeInsets.all(4),
               decoration: BoxDecoration(
                 color: widget.dync.inversePrimary,
-                borderRadius: BorderRadius.all(Radius.circular(50)),
+                borderRadius: const BorderRadius.all(Radius.circular(50)),
               ),
               height: MediaQuery.of(context).size.height / 13,
               child: Image.network(
@@ -295,16 +295,16 @@ class _LoginPageState extends State<LoginPage> {
       },
       child: Container(
         height: MediaQuery.of(context).size.height / 17,
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: widget.dync.primary,
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
         ),
         width: 100,
         child: Center(
           child: Text(
             tr('Log In'),
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
         ),
       ),
@@ -314,7 +314,7 @@ class _LoginPageState extends State<LoginPage> {
 
 Container tophead(BuildContext context, col) {
   return Container(
-    padding: EdgeInsets.only(left: 20),
+    padding: const EdgeInsets.only(left: 20),
     height: MediaQuery.of(context).size.height / 3.4,
     width: double.infinity,
     alignment: Alignment.centerLeft,
@@ -328,7 +328,7 @@ Container tophead(BuildContext context, col) {
     ),
     child: Text(
       tr("Hi user\nWelcome\nback"),
-      style: TextStyle(fontSize: 36, color: Colors.white),
+      style: const TextStyle(fontSize: 36, color: Colors.white),
     ),
   );
 }

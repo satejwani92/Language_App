@@ -68,81 +68,81 @@ class _IndProgressState extends State<IndProgress> {
                         !(Index <= prog.progress_get()[0])
                             ? {print("nothing")}
                             : {
-                                Navigator.of(context)
-                                    .pushReplacement(MaterialPageRoute(
-                                        builder: (context) => questionsUi(
-                                              topic: Vocabulary_Key[Index],
-                                              dync: widget.dync,
-                                            )))
-                              };
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute(
+                              builder: (context) => questionsUi(
+                                topic: Vocabulary_Key[Index],
+                                dync: widget.dync,
+                              )))
+                        };
                       },
                       child: !(Index <= prog.progress_get()[0])
                           ? Stack(
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.all(10),
-                                  height:
-                                      MediaQuery.of(context).size.height / 5,
-                                  decoration: BoxDecoration(
-                                      color: widget.dync.primary,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(20))),
-                                  child: Center(
-                                    child: Text(
-                                      Vocabulary[Index],
-                                      style: TextStyle(
-                                          color: widget.dync.inversePrimary,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 17),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                ),
-                                Opacity(
-                                  opacity: 0.5,
-                                  child: Container(
-                                    margin: EdgeInsets.all(10),
-                                    height:
-                                        MediaQuery.of(context).size.height / 5,
-                                    decoration: BoxDecoration(
-                                        color: widget.dync.onPrimaryContainer,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20))),
-                                    child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 50),
-                                      child: Align(
-                                          alignment: Alignment.center,
-                                          child: Icon(
-                                            Icons.lock,
-                                            size: 25,
-                                            color: widget.dync.primaryContainer,
-                                          )),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            )
-                          : Container(
-                              margin: EdgeInsets.all(10),
-                              height: MediaQuery.of(context).size.height / 5,
-                              decoration: BoxDecoration(
-                                  color: widget.dync.primaryContainer,
-                                  border: Border.all(
-                                      color: widget.dync.primary, width: 2),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20))),
-                              child: Center(
-                                child: Text(
-                                  Vocabulary[Index],
-                                  style: TextStyle(
-                                      color: widget.dync.secondary,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 17),
-                                  textAlign: TextAlign.center,
-                                ),
+                        children: [
+                          Container(
+                            margin: EdgeInsets.all(10),
+                            height:
+                            MediaQuery.of(context).size.height / 5,
+                            decoration: BoxDecoration(
+                                color: widget.dync.primary,
+                                borderRadius: BorderRadius.all(
+                                    Radius.circular(20))),
+                            child: Center(
+                              child: Text(
+                                Vocabulary[Index],
+                                style: TextStyle(
+                                    color: widget.dync.inversePrimary,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17),
+                                textAlign: TextAlign.center,
                               ),
                             ),
+                          ),
+                          Opacity(
+                            opacity: 0.5,
+                            child: Container(
+                              margin: EdgeInsets.all(10),
+                              height:
+                              MediaQuery.of(context).size.height / 5,
+                              decoration: BoxDecoration(
+                                  color: widget.dync.onPrimaryContainer,
+                                  borderRadius: BorderRadius.all(
+                                      Radius.circular(20))),
+                              child: Padding(
+                                padding:
+                                const EdgeInsets.only(bottom: 50),
+                                child: Align(
+                                    alignment: Alignment.center,
+                                    child: Icon(
+                                      Icons.lock,
+                                      size: 25,
+                                      color: widget.dync.primaryContainer,
+                                    )),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                          : Container(
+                        margin: EdgeInsets.all(10),
+                        height: MediaQuery.of(context).size.height / 5,
+                        decoration: BoxDecoration(
+                            color: widget.dync.primaryContainer,
+                            border: Border.all(
+                                color: widget.dync.primary, width: 2),
+                            borderRadius:
+                            BorderRadius.all(Radius.circular(20))),
+                        child: Center(
+                          child: Text(
+                            Vocabulary[Index],
+                            style: TextStyle(
+                                color: widget.dync.secondary,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
                     );
                   }),
             )

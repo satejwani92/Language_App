@@ -125,7 +125,7 @@ class _chatUIState extends State<chatUI> {
                                           style: TextStyle(
                                             fontWeight: FontWeight.normal,
                                             fontSize: 8,
-                                            color: data['Reciver'] ==
+                                            color: data['Receiver'] ==
                                                     widget.reciver_name
                                                 ? widget.dync.primaryContainer
                                                 : widget
@@ -162,6 +162,7 @@ class _chatUIState extends State<chatUI> {
                           cursorColor: widget.dync.primary,
                           style: TextStyle(color: widget.dync.primary),
                           decoration: InputDecoration(
+                            hintText: "Enter Message",
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.all(8)),
                         ),
